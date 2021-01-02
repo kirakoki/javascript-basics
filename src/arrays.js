@@ -1,61 +1,83 @@
 const getNthElement = (index, array) => {
-  // your code here
+  if (index >= array.length) {
+    index -= array.length;
+  }
+  return array[index];
 };
 
 const arrayToCSVString = array => {
-  // your code here
+  return array.join();
 };
 
 const csvStringToArray = string => {
-  // your code here
+  return string.split(",");
 };
 
 const addToArray = (element, array) => {
-  // your code here
+  array.push(element);
 };
 
 const addToArray2 = (element, array) => {
-  // your code here
+  // const array2 = array.concat([element]);
+  const array2 = [...array, element];
+  return array2;
 };
 
 const removeNthElement = (index, array) => {
-  // your code here
+  return array.splice(index, 1);
 };
 
 const numbersToStrings = numbers => {
-  // your code here
+  return numbers.map(number => number.toString());
 };
 
 const uppercaseWordsInArray = strings => {
-  // your code here
+  return strings.map(string => string.toUpperCase());
 };
 
 const reverseWordsInArray = strings => {
-  // your code here
+  return strings.map(string =>
+    string
+      .split("")
+      .reverse()
+      .join("")
+  );
 };
 
 const onlyEven = numbers => {
-  // your code here
+  return numbers.filter(number => number % 2 === 0);
 };
 
 const removeNthElement2 = (index, array) => {
-  // your code here
+  // const array2 = array.splice(index, 1);
+  // return array2;
+  return array.filter(i => array.indexOf(i) !== index);
 };
 
 const elementsStartingWithAVowel = strings => {
-  // your code here
+  const vowels = ["a", "e", "i", "o", "u"];
+
+  return strings.filter(string => {
+    const firstLetter = string[0].toLowerCase();
+
+    return vowels.includes(firstLetter);
+  });
 };
 
 const removeSpaces = string => {
-  // your code here
+  return string.split(" ").join("");
 };
 
 const sumNumbers = numbers => {
-  // your code here
+  return numbers.reduce((acc, val) => {
+    return acc + val;
+  }, 0);
 };
 
 const sortByLastLetter = strings => {
-  // your code here
+  return strings.sort(
+    (a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1)
+  );
 };
 
 module.exports = {
